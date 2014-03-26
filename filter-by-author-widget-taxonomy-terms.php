@@ -8,11 +8,11 @@
  */
 
 
-add_filter( 'widget_tag_cloud_args', 'filter_categories_by_author' );
-add_filter( 'widget_categories_dropdown_args', 'filter_categories_by_author' );
-add_filter( 'widget_categories_args', 'filter_categories_by_author' );
+add_filter( 'widget_tag_cloud_args', 'wpse_138097_filter_categories_by_author' );
+add_filter( 'widget_categories_dropdown_args', 'wpse_138097_filter_categories_by_author' );
+add_filter( 'widget_categories_args', 'wpse_138097_filter_categories_by_author' );
 
-function filter_categories_by_author( $args ){
+function wpse_138097_filter_categories_by_author( $args ){
 	// only process if on the author template
 	if( is_author() ){
 		// get the author ID from the template
@@ -20,12 +20,12 @@ function filter_categories_by_author( $args ){
 		// define taxonomy by the supplied widget or assumed default
 		$taxonomy = !empty( $args['taxonomy'] ) ? $args['taxonomy'] : 'category';
 		// filter by including only IDs associated to the author
-		$args['include'] = get_term_ids_by_author( $author_id, $taxonomy );
+		$args['include'] = wpse_138097_get_term_ids_by_author( $author_id, $taxonomy );
 	}
 	return $args;
 }
 
-function get_term_ids_by_author( $user_id, $taxonomy = 'category' ){
+function wpse_138097_get_term_ids_by_author( $user_id, $taxonomy = 'category' ){
 	global $wpdb;
 	return $wpdb->get_col( $wpdb->prepare( "
 		SELECT DISTINCT(terms.term_id) as ID
