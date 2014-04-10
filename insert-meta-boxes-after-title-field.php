@@ -10,6 +10,10 @@ add_action( 'edit_form_after_title', 'wpse_140900_add_meta_boxes_after_title', 1
 function wpse_140900_add_meta_boxes_after_title( $post ){
 	global $wp_meta_boxes;
 
+	// filter by post type (define your own post types to enable this method)
+	if( ! in_array( $post->post_type, array('post') ) )
+		return false;
+
 	// you could create your own context and load meta boxes in context
 	// in this case we are moving the side rail meta boxes below 
 	// the title and above the content editor
