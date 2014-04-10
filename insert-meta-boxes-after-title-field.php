@@ -13,6 +13,6 @@ function wpse_140900_add_meta_boxes_after_title( $post ){
 	// you could create your own context and load meta boxes in context
 	// in this case we are moving the side rail meta boxes below 
 	// the title and above the content editor
-    do_meta_boxes( get_current_screen(), 'side', $post );
-    unset( $wp_meta_boxes['post']['side'] );
+	do_meta_boxes( get_current_screen(), 'side', $post );
+	unset( $wp_meta_boxes['post']['side'] );
 }
