@@ -2,6 +2,9 @@
 
 /**
  * insert meta boxes before main editor below title
+ * 
+ * @link http://wordpress.stackexchange.com/a/140906/28798
+ * @author codearachnid
  */
 
 // hook meta boxes after title
