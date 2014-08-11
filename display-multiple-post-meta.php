@@ -3,7 +3,7 @@
 /**
  * Display custom meta group of fields for a custom post type
  * 
- * @link http://wordpress.stackexchange.com/a/140906/28798
+ * @link http://wordpress.stackexchange.com/a/157410/157466/
  * @author codearachnid
  * @example
  
